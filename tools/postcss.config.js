@@ -16,6 +16,7 @@ module.exports = () => ({
     // Transfer @import rule by inlining content, e.g. @import 'normalize.css'
     // https://github.com/postcss/postcss-import
     require('postcss-import')(),
+    require('postcss-cssnext')(),
     // W3C variables, e.g. :root { --color: red; } div { background: var(--color); }
     // https://github.com/postcss/postcss-custom-properties
     require('postcss-custom-properties')(),
@@ -57,6 +58,5 @@ module.exports = () => ({
     require('postcss-flexbugs-fixes')(),
     // Add vendor prefixes to CSS rules using values from caniuse.com
     // https://github.com/postcss/autoprefixer
-    require('autoprefixer')(/* package.json/browserslist */),
   ],
 });

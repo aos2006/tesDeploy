@@ -114,10 +114,32 @@ const config = {
             issuer: { not: [reStyle] },
             use: 'isomorphic-style-loader',
           },
+          {
+            include: [path.resolve(__dirname, '../node_modules/react-toolbox')],
+            exclude: [path.resolve(__dirname, '../src')],
+            loader: 'css-loader',
+            options: {
+              // CSS Loader https://github.com/webpack/css-loader
+              importLoaders: 1,
+              sourceMap: isDebug,
+              // CSS Modules https://github.com/css-modules/css-modules
+              modules: true,
+              localIdentName: isDebug
+                ? '[name]-[local]-[hash:base64:5]'
+                : '[hash:base64:5]',
+              // CSS Nano http://cssnano.co/options/
+              minimize: !isDebug,
+              discardComments: { removeAll: true },
+            },
+          },
 
           // Process external/third-party styles
           {
-            exclude: path.resolve(__dirname, '../src'),
+            exclude: [
+              path.resolve(__dirname, '../src'),
+              path.resolve(__dirname, '../node_modules/react-toolbox'),
+            ],
+            include: [path.resolve(__dirname, '../node_modules/normalize')],
             loader: 'css-loader',
             options: {
               sourceMap: isDebug,
@@ -128,7 +150,7 @@ const config = {
 
           // Process internal/project styles (from src folder)
           {
-            include: path.resolve(__dirname, '../src'),
+            include: [path.resolve(__dirname, '../src')],
             loader: 'css-loader',
             options: {
               // CSS Loader https://github.com/webpack/css-loader
@@ -154,22 +176,6 @@ const config = {
               },
             },
           },
-
-          // Compile Less to CSS
-          // https://github.com/webpack-contrib/less-loader
-          // Install dependencies before uncommenting: yarn add --dev less-loader less
-          // {
-          //   test: /\.less$/,
-          //   loader: 'less-loader',
-          // },
-
-          // Compile Sass to CSS
-          // https://github.com/webpack-contrib/sass-loader
-          // Install dependencies before uncommenting: yarn add --dev sass-loader node-sass
-          // {
-          //   test: /\.scss$/,
-          //   loader: 'sass-loader',
-          // },
         ],
       },
 
@@ -382,7 +388,6 @@ const serverConfig = {
   resolve: {
     ...config.resolve,
   },
-
   module: {
     ...config.module,
 
@@ -412,6 +417,13 @@ const serverConfig = {
           },
         };
       }
+
+      // if (rule.loader === 'css-loader' && rule.options.modules) {
+      //   return {
+      //     ...rule,
+      //     loader: 'css-loader/locals',
+      //   };
+      // }
 
       // Override paths to static assets
       if (

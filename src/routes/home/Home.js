@@ -8,44 +8,24 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import { Button } from 'react-toolbox/lib/button';
+import BtnStyles from 'react-toolbox/lib/button/theme.css';
 import s from './Home.css';
 
 class Home extends React.Component {
-  static propTypes = {
-    news: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        link: PropTypes.string.isRequired,
-        content: PropTypes.string,
-      }),
-    ).isRequired,
-  };
+  static propTypes = {};
 
   render() {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <h1>React.js News</h1>
-          {this.props.news.map(item =>
-            <article key={item.link} className={s.newsItem}>
-              <h1 className={s.newsTitle}>
-                <a href={item.link}>
-                  {item.title}
-                </a>
-              </h1>
-              <div
-                className={s.newsDesc}
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{ __html: item.content }}
-              />
-            </article>,
-          )}
+          <Button label="aleshka" />
+          <h1 className={s.title}>React.js News</h1>
         </div>
       </div>
     );
   }
 }
 
-export default withStyles(s)(Home);
+export default withStyles(s, BtnStyles)(Home);

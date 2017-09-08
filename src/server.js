@@ -11,6 +11,7 @@ import path from 'path';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import csshook from 'css-modules-require-hook';
 import expressJwt, { UnauthorizedError as Jwt401Error } from 'express-jwt';
 import expressGraphQL from 'express-graphql';
 import jwt from 'jsonwebtoken';
@@ -31,6 +32,12 @@ import assets from './assets.json'; // eslint-disable-line import/no-unresolved
 import configureStore from './store/configureStore';
 import { setRuntimeVariable } from './actions/runtime';
 import config from './config';
+
+csshook({
+  generateScopedName: __DEV__
+    ? '[name]-[local]-[hash:base64:5]'
+    : '[hash:base64:5]',
+});
 
 const app = express();
 
@@ -75,6 +82,7 @@ app.use(passport.initialize());
 if (__DEV__) {
   app.enable('trust proxy');
 }
+
 app.get(
   '/login/facebook',
   passport.authenticate('facebook', {
