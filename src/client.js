@@ -121,6 +121,11 @@ async function onLocationChange(location, action) {
       query: queryString.parse(location.search),
     });
 
+    const loc = {
+      path: location.pathname,
+      query: queryString.parse(location.search),
+    };
+
     // Prevent multiple page renders during the routing process
     if (currentLocation.key !== location.key) {
       return;
@@ -132,7 +137,7 @@ async function onLocationChange(location, action) {
     }
 
     appInstance = ReactDOM.render(
-      <App context={context}>
+      <App context={context} route={route} location={loc}>
         {route.component}
       </App>,
       container,

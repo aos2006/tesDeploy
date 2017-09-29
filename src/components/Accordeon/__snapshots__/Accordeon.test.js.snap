@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Accordeon /> Render testing 1`] = `
+<div
+  className="root"
+>
+  <AccordeonItem
+    active={true}
+    handleToggle={[Function]}
+    itemIndex={0}
+    title="Меню 1"
+  >
+    dimon bidon
+  </AccordeonItem>
+  <AccordeonItem
+    active={false}
+    handleToggle={[Function]}
+    itemIndex={1}
+    title="Меню 2"
+  >
+    dimon bidon
+  </AccordeonItem>
+</div>
+`;

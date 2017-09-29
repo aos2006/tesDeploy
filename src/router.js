@@ -17,6 +17,7 @@ export default new Router(routes, {
         .load()
         .then(action => action.default(context, params));
     }
+
     if (typeof context.route.action === 'function') {
       return context.route.action(context, params);
     }

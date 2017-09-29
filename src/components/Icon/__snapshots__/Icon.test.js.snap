@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon /> Корректно отображается без props - Icon without Props 1`] = `
+<svg
+  className="icon icon-"
+  height={10}
+  width={undefined}
+>
+  <use
+    xlinkHref="#icon-"
+  />
+</svg>
+`;
+
+exports[`<Icon /> Корректно отображается с props - Icon without Props 1`] = `
+<svg
+  className="icon icon-add"
+  height={40}
+  width={30}
+>
+  <use
+    xlinkHref="#icon-add"
+  />
+</svg>
+`;

@@ -8,10 +8,17 @@
  */
 
 @import '../../components/variables.css';
+@import '../../components/media.css';
 
 .root {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-top: 10rem;
+  min-height: 100vh;
+}
+
+.wrapper {
+  background-image: url('./images/home-bg.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 .container {
@@ -22,5 +29,40 @@
 
 .title {
   color: red;
-  font-size: 30px;
+  font-size: 16.5rem;
+  line-height: 0;
+  color: rgb(0, 0, 0);
+  font-size: 13.2rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.548rem;
+  @media (--xs) {
+    font-size: 9.5rem;
+    letter-spacing: 0.346rem;
+  }
+
+  @media (--sm) {
+    font-size: 16.6rem;
+    letter-spacing: 0.55rem;
+  }
+
+}
+
+.descr {
+  color: rgb(0, 0, 0);
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.091rem;
+  line-height: .5;
+  margin-bottom: 25px;
+  
+  @media (--xs) {
+    font-size: 2.7rem;
+    line-height: 1.5;
+  }
+  @media (--sm) {
+    font-size: 2.7rem;
+    line-height: 0.5;
+  }
 }

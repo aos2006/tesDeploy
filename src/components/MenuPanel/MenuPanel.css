@@ -1,0 +1,103 @@
+@import '../variables';
+@import '../media.css';
+
+.root {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  @media(--xs) {
+    width: 100%;
+    margin-top: 8.6rem;
+  }
+
+  @media(--sm) {
+    width: 31.2rem;
+  }
+
+  @media(--md) {
+    z-index: 1;
+    margin-top: 0;
+  }
+
+}
+
+.active {
+  z-index: 4;
+}
+
+.drawer {
+  box-shadow: 0 0 2.1rem rgba(218, 218, 218, 0.5);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 2.1rem rgba(218, 218, 218, 0.5);
+  background-color: rgb(255, 255, 255);
+
+  @media(--xs) {
+    width: 100%;
+    padding-top: 0;
+    max-width: 100%;
+    min-height: 100vh;
+  }
+
+  @media(--sm) {
+    padding-top: 7.5rem;
+  }
+
+  @media(--md) {
+    min-height: 100vh;
+    margin-top: 0;
+    min-width: 100%;
+    width: 100%;
+    margin-right: 0px;
+    min-height: 100vh;
+    padding: 200px 0px 38px 0px;
+    max-width: 217px;
+  }
+
+
+}
+
+.burger {
+  top: 38px;
+  position: fixed;
+  right: 20px;
+  z-index: 10;
+
+  @media(--xs) {
+    display: none;
+  }
+  
+  @media(--md) {
+    display: block;
+  }
+}
+
+.accordeon {
+  padding: 16px 20px 16px 20px;
+}
+
+.accordeonActiveContent {
+  padding-top: 16px!important;
+  padding-bottom: 16px!important;
+}
+
+.category {
+  display: block;
+  text-align: right;
+  color: rgb(192, 192, 192);
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.047rem;
+  margin-bottom: 1.8rem;
+  cursor: pointer;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: var(--hover)
+  }
+}

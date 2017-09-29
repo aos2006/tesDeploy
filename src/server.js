@@ -35,7 +35,7 @@ import config from './config';
 
 csshook({
   generateScopedName: __DEV__
-    ? '[name]-[local]-[hash:base64:5]'
+    ? '[name]__[local]___[hash:base64:5]'
     : '[hash:base64:5]',
 });
 
@@ -146,6 +146,11 @@ app.get('*', async (req, res, next) => {
       }),
     );
 
+    const location = {
+      path: req.path,
+      query: req.query,
+    }
+
     // Global (context) variables that can be easily accessed from any React component
     // https://facebook.github.io/react/docs/context.html
     const context = {
@@ -174,7 +179,7 @@ app.get('*', async (req, res, next) => {
 
     const data = { ...route };
     data.children = ReactDOM.renderToString(
-      <App context={context} store={store}>
+      <App context={context} store={store} location={location}>
         {route.component}
       </App>,
     );

@@ -1,0 +1,12 @@
+@import './media.css';
+
+.container {
+  width: 100%;
+  max-width:  1170px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  @media(--xs) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

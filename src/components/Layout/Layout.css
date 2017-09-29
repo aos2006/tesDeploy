@@ -22,17 +22,35 @@
 html {
   color: #222;
   font-weight: 100;
-  font-size: 1em; /* ~16px; */
+  font-size: var(--base-font-size);
   font-family: var(--font-family-base);
   line-height: 1.375; /* ~22px */
 }
 
+button {
+  font-family: var(--font-family-base)!important;
+  line-height: 1;
+}
+
 body {
   margin: 0;
+  width: 100%;
+  min-width: 320px;
 }
 
 a {
   color: #0074c2;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  z-index: 10;
+}
+
+#app {
+  overflow: hidden;
 }
 
 /*

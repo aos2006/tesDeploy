@@ -1,5 +1,5 @@
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
-
+const iconParser = require('svg-sprite-webpack-plugin').webpackIsomorphicParser;
 // see this link for more info on what all of this means
 // https://github.com/halt-hammerzeit/webpack-isomorphic-tools
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
     },
     svg: {
       extension: 'svg',
-      parser: WebpackIsomorphicToolsPlugin.url_loader_parser,
+      parser: iconParser,
     },
     // this whole "bootstrap" asset type is only used once in development mode.
     // the only place it's used is the Html.js file

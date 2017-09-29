@@ -11,8 +11,8 @@
   /*
    * Typography
    * ======================================================================== */
-
-  --font-family-base: 'Segoe UI', 'HelveticaNeue-Light', sans-serif;
+  --base-font-size: 10px;
+  --font-family-base: 'Roboto', 'HelveticaNeue-Light', sans-serif;
 
   /*
    * Layout
@@ -28,4 +28,19 @@
   --screen-sm-min: 768px;  /* Small screen / tablet */
   --screen-md-min: 992px;  /* Medium screen / desktop */
   --screen-lg-min: 1200px; /* Large screen / wide desktop */
+  --primary-color: rgb(23, 40, 250);
+  --gray-color: rgb(215, 215, 215);
+  --black: rgb(0, 0, 0);
+  --blue-bg: var(--primary-color);
+  --blue-hover: rgb(18, 30, 174);
+  --input-error: rgb(174, 18, 18);
+  --input-focus: rgb(18, 30, 174);
+  --disabled-color: rgb(192, 192, 192);
+  --like-bg: rgb(222, 85, 122);
+  --hover: rgb(18, 30, 174);
+  --active: rgb(23, 40, 250);
+  --large-point: 1100px;
+  --medium-point: 880px;
+  --small-point: 728px;
+  --extra-small-point: 320px;
 }

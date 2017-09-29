@@ -10,6 +10,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider as ReduxProvider } from 'react-redux';
+import history from '../history';
 
 const ContextType = {
   // Enables critical path CSS rendering
@@ -50,10 +51,18 @@ class App extends React.PureComponent {
     children: PropTypes.element.isRequired,
   };
 
-  static childContextTypes = ContextType;
+  static childContextTypes = {
+    ...ContextType,
+    route: PropTypes.object,
+    location: PropTypes.object,
+  };
 
   getChildContext() {
-    return this.props.context;
+    return {
+      ...this.props.context,
+      route: this.props.route,
+      location: this.props.location,
+    };
   }
 
   render() {

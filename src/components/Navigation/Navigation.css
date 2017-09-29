@@ -6,41 +6,75 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
+@import '../variables.css';
+@import '../../components/media.css';
 
 .root {
-  float: right;
-  margin: 6px 0 0;
+
+  @media(--xs) {
+   display: flex;
+   align-items: center; 
+   min-height: 60px;
+  }
+
+  @media(--md) {
+   display: block;
+   width: 100%;
+   min-height: 100vh;
+   max-width: 100px;
+  }
 }
 
 .link {
-  display: inline-block;
-  padding: 3px 8px;
-  text-decoration: none;
-  font-size: 1.125em; /* ~18px */
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover,
+  &:active {
+    path {
+      fill: var(--hover);
+    }
+  }
+
+  @media(--xs) {
+    margin-bottom: 0px;
+    margin-right: 37px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media(--md) {
+    margin-bottom: 5rem;
+    display: block; 
+    text-align: center;
+    margin-right: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+   }
 }
 
-.link,
-.link:active,
-.link:visited {
-  color: rgba(255, 255, 255, 0.6);
+.activeLink {
+  path {
+    fill: var(--active);
+  }
 }
 
-.link:hover {
-  color: rgba(255, 255, 255, 1);
+.icon{
+  fill: currentColor;
+
+  @media(--xs) {
+    width: 24px;
+    height: 24px;
+  }
 }
 
-.highlight {
-  margin-right: 8px;
-  margin-left: 8px;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.15);
-  color: #fff;
-}
+.burger {
+  margin-left: auto;
 
-.highlight:hover {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.spacer {
-  color: rgba(255, 255, 255, 0.3);
+  @media(--md) {
+   display: none;
+   }
 }

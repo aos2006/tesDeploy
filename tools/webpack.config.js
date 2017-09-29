@@ -115,7 +115,10 @@ const config = {
             use: 'isomorphic-style-loader',
           },
           {
-            include: [path.resolve(__dirname, '../node_modules/react-toolbox')],
+            include: [
+              path.resolve(__dirname, '../node_modules/react-toolbox'),
+              /flexboxgrid/,
+            ],
             exclude: [path.resolve(__dirname, '../src')],
             loader: 'css-loader',
             options: {
@@ -125,7 +128,7 @@ const config = {
               // CSS Modules https://github.com/css-modules/css-modules
               modules: true,
               localIdentName: isDebug
-                ? '[name]-[local]-[hash:base64:5]'
+                ? '[name]__[local]___[hash:base64:5]'
                 : '[hash:base64:5]',
               // CSS Nano http://cssnano.co/options/
               minimize: !isDebug,
@@ -138,6 +141,7 @@ const config = {
             exclude: [
               path.resolve(__dirname, '../src'),
               path.resolve(__dirname, '../node_modules/react-toolbox'),
+              /flexboxgrid/,
             ],
             include: [path.resolve(__dirname, '../node_modules/normalize')],
             loader: 'css-loader',
@@ -159,7 +163,7 @@ const config = {
               // CSS Modules https://github.com/css-modules/css-modules
               modules: true,
               localIdentName: isDebug
-                ? '[name]-[local]-[hash:base64:5]'
+                ? '[name]__[local]___[hash:base64:5]'
                 : '[hash:base64:5]',
               // CSS Nano http://cssnano.co/options/
               minimize: !isDebug,
@@ -178,7 +182,6 @@ const config = {
           },
         ],
       },
-
       // Rules for images
       {
         test: reImage,
@@ -223,6 +226,10 @@ const config = {
         test: /\.txt$/,
         loader: 'raw-loader',
       },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+      },
 
       // Convert Markdown into HTML
       {
@@ -237,6 +244,15 @@ const config = {
         loader: 'file-loader',
         options: {
           name: staticAssetName,
+        },
+      },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        loader: 'svg-react-loader',
+        query: {
+          classIdPrefix: '[name]-[hash:8]__',
+          xmlnsTest: /^xmlns.*$/,
         },
       },
 
@@ -417,19 +433,11 @@ const serverConfig = {
           },
         };
       }
-
-      // if (rule.loader === 'css-loader' && rule.options.modules) {
-      //   return {
-      //     ...rule,
-      //     loader: 'css-loader/locals',
-      //   };
-      // }
-
       // Override paths to static assets
       if (
         rule.loader === 'file-loader' ||
-        rule.loader === 'url-loader' ||
-        rule.loader === 'svg-url-loader'
+        rule.loader === 'url-loader'
+        // rule.loader === 'svg-url-loader'
       ) {
         return {
           ...rule,

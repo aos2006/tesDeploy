@@ -9,8 +9,8 @@
 
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Button } from 'react-toolbox/lib/button';
-import BtnStyles from 'react-toolbox/lib/button/theme.css';
+import Button from 'components/Button/Button';
+import { Row, Col, Grid } from 'components/Grid';
 import s from './Home.css';
 
 class Home extends React.Component {
@@ -18,14 +18,19 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <Button label="aleshka" />
-          <h1 className={s.title}>React.js News</h1>
-        </div>
+      <div className={s.wrapper}>
+        <Grid>
+          <Row center="xs" className={s.root}>
+            <Col xs={12} sm={8} md={12} lg={12}>
+              <h1 className={s.title}>Owo</h1>
+              <p className={s.descr}>Магазин лучших реплик</p>
+              <Button label="Посмотреть все сумки" />
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
 }
 
-export default withStyles(s, BtnStyles)(Home);
+export default withStyles(s)(Home);
