@@ -10,12 +10,12 @@ RUN ls -al -R
 # Install Node.js dependencies
 ENV NPM_CONFIG_LOGLEVEL warn
 RUN yarn add global pm2
-# RUN yarn install --production --no-progress
-RUN pm2 install pm2-auto-pull
-RUN pm2 update
+RUN npm uninstall pm2-auto-pull
+# RUN yarn add pm2-auto-pull
+RUN yarn install --production --no-progress
+# RUN pm2 set pm2-auto-pull:interval 60000
 EXPOSE 3000
 # Copy application files
 COPY ./build .
 
-
-CMD [ "pm2-docker", "start", "--format", "pm2.prod.json", "-i", "max"]
+CMD ["pm2-docker", "pm2.prod.json"];
