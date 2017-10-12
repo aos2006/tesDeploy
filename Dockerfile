@@ -10,7 +10,7 @@ RUN ls -al -R
 # Install Node.js dependencies
 ENV NPM_CONFIG_LOGLEVEL warn
 RUN yarn add global pm2
-RUN npm uninstall pm2-auto-pull
+# RUN npm uninstall pm2-auto-pull
 # RUN yarn add pm2-auto-pull
 RUN yarn install --production --no-progress
 # RUN pm2 set pm2-auto-pull:interval 60000
