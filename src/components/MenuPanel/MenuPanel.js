@@ -25,10 +25,12 @@ const MenuPanel = ({
   handleAccordeonToggle,
   activeAccordeonIndex,
 }) => (
-  <div className={cx({
-    [s.root]: true,
-    [s.active]: isShow,
-  })}>
+  <div
+    className={cx({
+      [s.root]: true,
+      [s.active]: isShow,
+    })}
+  >
     <div className={s.burger}>
       <Burger onClick={handleToggle} show={isShow} />
     </div>

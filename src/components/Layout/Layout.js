@@ -26,7 +26,7 @@ class Layout extends React.Component {
   };
 
   state = {
-    isShow: true,
+    isShow: false,
     activeAccordeonIndex: 0,
   };
 

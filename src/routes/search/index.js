@@ -8,7 +8,7 @@
  */
 
 import React from 'react';
-import Home from './Home';
+import Search from './Search';
 import Layout from '../../components/Layout';
 
 async function action({ fetch }) {
@@ -20,12 +20,12 @@ async function action({ fetch }) {
   // const { data } = await resp.json();
   // if (!data || !data.news) throw new Error('Failed to load the news feed.');
   return {
-    chunks: ['home'],
-    title: 'React Starter Kit',
-    path: '/home',
+    chunks: ['search'],
+    title: 'Search page',
+    path: '/search',
     component: (
       <Layout>
-        <Home />
+        <Search />
       </Layout>
     ),
   };

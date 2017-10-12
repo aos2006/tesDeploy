@@ -1,0 +1,88 @@
+@import '../../../../components/media.css';
+
+.title {
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-top: 0;
+
+  @media(--xs) {
+    letter-spacing: 0.179rem;
+    font-size: 3.7rem;
+    margin-bottom: 5.5rem;
+  }
+
+}
+
+.item {
+  @media(--xs) {
+    margin-bottom: 1.8rem;
+
+    &:last-child {
+      margin-bottom: 5.6rem;
+    }
+  }
+
+  @media(--xs) {
+    margin-bottom: 4.7rem;
+  }
+}
+
+
+.footer {
+  display: flex;
+  align-items: center;
+
+  @media(--xs) {
+    margin-top: 3.8rem;
+    margin-bottom: 1.9rem;
+  }
+
+  @media(--sm) {
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  @media(--md) {
+    justify-content: flex-end;
+  }
+}
+
+.label {
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  text-transform: uppercase;
+
+  @media(--xs) {
+    font-size: 1rem;
+    letter-spacing: 0.047rem;
+    margin-right: 19px;
+  }
+
+  @media(--sm) {
+    font-size: 1.4rem;
+  }
+}
+
+.total {
+  color: rgb(23, 40, 250);
+  font-weight: 700;
+
+  @media(--xs) {
+    font-size: 3.7rem;
+    letter-spacing: 0.179rem;
+  }
+
+  @media(--sm) {
+    font-size: 5.4rem;
+    letter-spacing: 0.179rem;
+  }
+}
+
+.submit {
+  text-align: center;
+
+  @media(--md) {
+    text-align: right;
+  }
+}

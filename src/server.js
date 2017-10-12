@@ -149,7 +149,7 @@ app.get('*', async (req, res, next) => {
     const location = {
       path: req.path,
       query: req.query,
-    }
+    };
 
     // Global (context) variables that can be easily accessed from any React component
     // https://facebook.github.io/react/docs/context.html

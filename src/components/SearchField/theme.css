@@ -1,0 +1,61 @@
+@import '../media.css';
+
+.inputElement {
+  color: rgb(0, 0, 0);
+  font-weight: 100;
+  font-family: inherit;
+  text-transform: uppercase;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  width: 100%;
+
+  @media(--xs) {
+    font-size: 2.7rem;
+    letter-spacing: 0.09rem;
+    margin-bottom: 2.5rem;
+    font-size: 2.7rem;
+    padding-bottom: 2rem;
+  }
+
+  @media(--sm) {
+    font-size: 7.2rem!important;
+    letter-spacing: 0.239rem!important;
+  }
+
+  @media(--md) {
+    font-size: 8.4rem;
+    letter-spacing: 0.348rem;
+  }
+}
+
+.icon {
+  width: auto!important;
+  height: auto!important;
+  line-height: 1!important;
+  position: absolute!important; 
+  right: 0;  
+  top: calc(50% - 20px);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.input {
+  position: relative;
+  margin-left: 0!important;
+  display: block;
+}
+
+.clear {
+  width: 16px;
+  height: 16px;
+
+  @media(--xs) {
+    width: 25px;
+    height: 25px;
+  }
+
+  polygon {
+    fill: #b4b4b4;
+  }
+}

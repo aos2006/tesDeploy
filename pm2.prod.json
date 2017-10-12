@@ -1,0 +1,14 @@
+
+{
+  "apps" : [{
+    "merge_logs"  : true,
+    "out_file"    : "/tmp/servers.log",
+    "name"        : "server",
+    "script"      : "server.js",
+    "log_date_format" : "MM/DD/YYYY HH:mm:ss",
+    "kill_timeout" : 3000,
+    "env": {
+      "production": true,
+    }
+  }]
+}

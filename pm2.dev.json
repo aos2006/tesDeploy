@@ -1,0 +1,11 @@
+
+{
+  "apps" : [{
+    "name"        : "server",
+    "script"      : "npm",
+    "args": "start",
+    "exec_interpter": "babel-node", 
+    "log_date_format" : "MM/DD/YYYY HH:mm:ss",
+    "kill_timeout" : 3000,
+  }]
+}

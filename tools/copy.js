@@ -37,6 +37,7 @@ async function copy() {
     ),
     copyFile('LICENSE.txt', 'build/LICENSE.txt'),
     copyFile('yarn.lock', 'build/yarn.lock'),
+    copyFile('pm2.prod.json', 'build/pm2.prod.json'),
     copyDir('public', 'build/public'),
   ]);
 

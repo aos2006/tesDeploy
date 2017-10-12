@@ -15,7 +15,7 @@ import webpackConfig from './webpack.config';
 const RUNNING_REGEXP = /The server is running at http:\/\/(.*?)\//;
 
 let server;
-let pending = true;
+const pending = true;
 const [, serverConfig] = webpackConfig;
 const serverPath = path.join(
   serverConfig.output.path,
@@ -29,8 +29,8 @@ function runServer() {
       const time = new Date().toTimeString();
       const match = data.toString('utf8').match(RUNNING_REGEXP);
 
-      process.stdout.write(time.replace(/.*(\d{2}:\d{2}:\d{2}).*/, '[$1] '));
-      process.stdout.write(data);
+      // process.stdout.write(time.replace(/.*(\d{2}:\d{2}:\d{2}).*/, '[$1] '));
+      // process.stdout.write(data);
 
       if (match) {
         server.host = match[1];
@@ -52,6 +52,7 @@ function runServer() {
 
     if (pending) {
       server.once('exit', (code, signal) => {
+        console.log(code, signal, 'from fn');
         if (pending) {
           throw new Error(
             `Server terminated unexpectedly with code: ${code} signal: ${signal}`,

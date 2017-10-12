@@ -8,24 +8,24 @@
  */
 
 import React from 'react';
-import Home from './Home';
+import Product from './Product';
 import Layout from '../../components/Layout';
 
 async function action({ fetch }) {
-  // const resp = await fetch('/graphql', {
-  //   body: JSON.stringify({
-  //     query: '{news{title,link,content}}',
-  //   }),
-  // });
-  // const { data } = await resp.json();
-  // if (!data || !data.news) throw new Error('Failed to load the news feed.');
+  const resp = await fetch('/graphql', {
+    body: JSON.stringify({
+      query: '{news{title,link,content}}',
+    }),
+  });
+  const { data } = await resp.json();
+  if (!data || !data.news) throw new Error('Failed to load the news feed.');
   return {
-    chunks: ['home'],
-    title: 'React Starter Kit',
-    path: '/home',
+    chunks: ['product'],
+    title: 'Product page',
+    path: '/product',
     component: (
       <Layout>
-        <Home />
+        <Product />
       </Layout>
     ),
   };

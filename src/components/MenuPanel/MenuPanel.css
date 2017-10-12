@@ -26,7 +26,10 @@
 
 .active {
   z-index: 4;
+  
 }
+
+
 
 .drawer {
   box-shadow: 0 0 2.1rem rgba(218, 218, 218, 0.5);
@@ -39,6 +42,7 @@
     padding-top: 0;
     max-width: 100%;
     min-height: 100vh;
+    
   }
 
   @media(--sm) {
@@ -93,11 +97,12 @@
   letter-spacing: 0.047rem;
   margin-bottom: 1.8rem;
   cursor: pointer;
+
   &:last-child {
     margin-bottom: 0;
   }
 
   &:hover {
-    color: var(--hover)
+    color: var(--hover);
   }
 }

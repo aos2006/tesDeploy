@@ -12,19 +12,29 @@
 // The top-level (parent) route
 const routes = {
   path: '/',
-
   // Keep in mind, routes are evaluated in order
   children: [
     {
-      path: '/',
+      path: '/product/:productId',
+      load: () => import(/* webpackChunkName: 'product' */ './product'),
+    },
+    {
+      path: '/search',
+      load: () => import(/* webpackChunkName: 'search' */ './search'),
+    },
+    {
+      path: '/basket',
+      load: () => import(/* webpackChunkName: 'card' */ './card'),
+    },
+    {
+      path: '/home',
       load: () => import(/* webpackChunkName: 'home' */ './home'),
     },
-    // Wildcard routes, e.g. { path: '*', ... } (must go last)
     {
       path: '*',
       load: () => import(/* webpackChunkName: 'not-found' */ './not-found'),
     },
-  ],
+  ],   
 
   async action({ next }) {
     // Execute each child route until one of them return the result
@@ -32,7 +42,6 @@ const routes = {
     // Provide default values for title, description etc.
     route.title = `${route.title || 'Untitled Page'} - www.reactstarterkit.com`;
     route.description = route.description || '';
-    console.log(route.path);
     return route;
   },
 };
