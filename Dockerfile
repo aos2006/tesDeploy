@@ -25,7 +25,7 @@ ADD . /var/www/dwy
 RUN ls -la
 # RUN yarn install --production --no-progress 
 COPY docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
+# ENTRYPOINT ["/docker-entrypoint.sh"]
 # Expose port
 EXPOSE 3000
 # Run app
