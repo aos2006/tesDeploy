@@ -24,7 +24,7 @@ WORKDIR /var/www/dwy
 
 ADD . /var/www/dwy
 RUN ls -la
-RUN npm install --production
+RUN npm install
 # ENTRYPOINT ["/docker-entrypoint.sh"]
 # Expose port
 EXPOSE 3000
