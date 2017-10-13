@@ -20,7 +20,7 @@ RUN npm install -g babel-cli babel-core babel-preset-env
 RUN mkdir -p /var/www/dwy
 
 # Define working directory
-WORKDIR /var/www/dwy
+WORKDIR ./var/www/dwy
 
 ADD . /var/www/dwy
 RUN ls -la
