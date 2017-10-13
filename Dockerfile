@@ -1,6 +1,6 @@
 
 # Set the base image to Ubuntu
-FROM ubuntu:14.04
+FROM ubuntu:latest
 
 
 # Install Node.js and other dependencies
