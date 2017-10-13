@@ -3,6 +3,7 @@
   "apps" : [{
     "name"        : "server",
     "script"      : "build/server.js",
+    "source_map_support": false,
     "log_date_format" : "MM/DD/YYYY HH:mm:ss"
   }],
 }
