@@ -28,6 +28,6 @@ RUN yarn install --production --no-progress
 
 # Expose port
 EXPOSE 3000
-
+RUN npm run build 
 # Run app
 CMD pm2 start --no-daemon  pm2.prod.json
