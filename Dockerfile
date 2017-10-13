@@ -21,10 +21,10 @@ WORKDIR /var/www/app
 ADD . /var/www/app
 
 RUN npm install
-
+RUN npm run build
 
 # Expose port
 EXPOSE 5000
 
 # Run app
-CMD pm2 start --no-daemon  pm2.dev.json
+CMD pm2 start --no-daemon  pm2.prod.json

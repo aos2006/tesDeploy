@@ -4,7 +4,7 @@
     "merge_logs"  : true,
     "out_file"    : "/tmp/servers.log",
     "name"        : "server",
-    "script"      : "server.js",
+    "script"      : "./build/server.js",
     "exec_mod": "cluster",
     "instances"  : "max",
     "log_date_format" : "MM/DD/YYYY HH:mm:ss",
