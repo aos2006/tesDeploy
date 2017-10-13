@@ -29,4 +29,4 @@ COPY docker-entrypoint.sh /
 # Expose port
 EXPOSE 3000
 # Run app
-CMD pm2 start pm2.prod.json
+CMD pm2 start --format pm2.prod.json
