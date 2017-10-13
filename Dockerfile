@@ -27,7 +27,7 @@ ADD . /var/www/dwy
 RUN yarn install 
 
 # Expose port
-EXPOSE 3000
+EXPOSE 5000
 
 # Run app
 CMD pm2 start --no-daemon  pm2.prod.json
