@@ -1,3 +1,4 @@
+
 # Set the base image to Ubuntu
 FROM ubuntu:14.04
 
@@ -13,18 +14,17 @@ RUN apt-get update && \
 # Install PM2
 RUN npm install -g pm2
 
-RUN mkdir -p /var/www/app
+RUN mkdir -p /var/www/dwy
 
 # Define working directory
-WORKDIR /var/www/app
+WORKDIR /var/www/dwy
 
-ADD . /var/www/app
+ADD . /var/www/dwy
 
 RUN npm install
-RUN npm run build
 
 # Expose port
-EXPOSE 5000
+EXPOSE 3000
 
 # Run app
 CMD pm2 start --no-daemon  pm2.prod.json
