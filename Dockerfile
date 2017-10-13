@@ -21,8 +21,7 @@ RUN mkdir -p /var/www/dwy
 
 # Define working directory
 WORKDIR .  var/www/dwy
-
-ADD . /var/www/dwy
+COPY . /var/www/dwy
 RUN ls -la
 RUN yarn install --production --no-progress
 # ENTRYPOINT ["/docker-entrypoint.sh"]
