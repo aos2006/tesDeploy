@@ -1,14 +1,14 @@
-# nginx:
-#   build: ./nginx
-#   links:
-#     - dwy:dwy
-#   ports:
-#     - "80:80"
-#   volumes:
-#     - /etc/nginx/psw:/etc/nginx/psw
-#     - /etc/nginx/ssl:/etc/nginx/ssl
-#   environment:
-#     - DOMAIN_NAME=brokenhand
+nginx:
+  build: ./nginx
+  links:
+    - dwy:dwy
+  ports:
+    - "80:80"
+  volumes:
+    - /etc/nginx/psw:/etc/nginx/psw
+    - /etc/nginx/ssl:/etc/nginx/ssl
+  environment:
+    - DOMAIN_NAME=brokenhand
 dwy:
   build: .
   ports:
