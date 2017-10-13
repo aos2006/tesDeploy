@@ -13,12 +13,12 @@ RUN apt-get update && \
 # Install PM2
 RUN npm install -g pm2
 RUN npm install -g babel-cli babel-core babel-preset-env
-RUN mkdir -p /var/www/deworkacy
+RUN mkdir -p /var/www/dwy
 
 # Define working directory
-WORKDIR /var/www/deworkacy
+WORKDIR /var/www/dwy
 
-ADD . /var/www/deworkacy
+ADD . /var/www/dwy
 
 RUN npm install --production
 
