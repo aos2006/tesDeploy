@@ -1,18 +1,18 @@
-nginx:
-  build: ./nginx
-  links:
-    - dwy:dwy
-  ports:
-    - "80:80"
-  volumes:
-    - /etc/nginx/psw:/etc/nginx/psw
-    - /etc/nginx/ssl:/etc/nginx/ssl
-  environment:
-    - DOMAIN_NAME=brokenhand.ga
+# nginx:
+#   build: ./nginx
+#   links:
+#     - dwy:dwy
+#   ports:
+#     - "80:80"
+#   volumes:
+#     - /etc/nginx/psw:/etc/nginx/psw
+#     - /etc/nginx/ssl:/etc/nginx/ssl
+#   environment:
+#     - DOMAIN_NAME=brokenhand.ga
 dwy:
   build: .
   ports:
-    - "3000"
+    - "80:3000"
   volumes:
     - /tmp:/tmp
   environment:
