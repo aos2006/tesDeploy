@@ -21,6 +21,7 @@
       "repo" : "https://github.com/aos2006/tesDeploy.git",
       "ref"  : "feature/depl",
       "path" : "/home/broken/deworkacy/site",
+      "post-deploy": "ls -la"
     }
   }
 }
