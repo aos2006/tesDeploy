@@ -23,10 +23,9 @@ WORKDIR /var/www/dwy
 
 ADD . /var/www/dwy
 RUN ls -la
-RUN yarn install --production --no-progress 
-COPY docker-entrypoint.sh /
+# RUN yarn install --production --no-progress
 # ENTRYPOINT ["/docker-entrypoint.sh"]
 # Expose port
 EXPOSE 3000
 # Run app
-CMD pm2 start --no-daemon ./build/server.js
+CMD pm2 start --no-daemon pm2.prod.json

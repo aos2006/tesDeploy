@@ -9,12 +9,6 @@
 #     - /etc/nginx/ssl:/etc/nginx/ssl
 #   environment:
 #     - DOMAIN_NAME=brokenhand.ga
-lb:
-  image: 'dockercloud/haproxy:latest'
-  links:
-    - dwy
-  ports:
-    - '80:3000'
 dwy:
   build: .
   ports:
