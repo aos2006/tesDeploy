@@ -11,7 +11,7 @@ nginx:
     - DOMAIN_NAME=brokenhand
 dwy:
   build: .
-  ports:
+  expose:
     - "3000"
   volumes:
     - /tmp:/tmp
