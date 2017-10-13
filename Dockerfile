@@ -17,11 +17,11 @@ RUN apt-get update && \
 RUN npm install -g yarn
 RUN npm install -g pm2
 RUN npm install -g babel-cli babel-core babel-preset-env
-RUN mkdir -p /var/www/dwy
+RUN mkdir -p /app/dwy
 
 # Define working directory
-WORKDIR . /var/www/dwy
-ADD . /var/www/dwy
+WORKDIR . /app/dwy
+ADD . /app/dwy
 RUN ls -la
 RUN yarn install --production --no-progress
 # ENTRYPOINT ["/docker-entrypoint.sh"]
