@@ -12,6 +12,7 @@ RUN apt-get update && \
     apt-get install --yes nodejs
 
 # Install PM2
+RUN npm install -g yarn
 RUN npm install -g pm2
 
 RUN mkdir -p /var/www/dwy
@@ -20,8 +21,8 @@ RUN mkdir -p /var/www/dwy
 WORKDIR /var/www/dwy
 
 ADD . /var/www/dwy
-
-RUN npm install
+RUN ls -la
+RUN yarn install 
 
 # Expose port
 EXPOSE 3000
