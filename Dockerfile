@@ -16,6 +16,7 @@ RUN apt-get update && \
 # Install PM2
 RUN npm install -g yarn
 RUN npm install -g pm2
+RUN yarn add global babel-cli
 RUN mkdir -p /var/www/dwy
 
 # Define working directory
