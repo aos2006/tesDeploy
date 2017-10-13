@@ -16,7 +16,7 @@ RUN apt-get update && \
 # Install PM2
 RUN npm install -g yarn
 RUN npm install -g pm2
-RUN npm install -g babel-node 
+RUN npm install -g babel-cli
 RUN mkdir -p /var/www/dwy
 
 # Define working directory
