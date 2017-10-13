@@ -3,13 +3,14 @@ FROM ubuntu:16.04
 
 
 # Install Node.js and other dependencies
-RUN apt-get update && \
-    apt-get -y install sudo && \
-    apt-get -y install curl && \
-    apt-get -y install git && \
-    apt-get -y install wget && \
-    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && \
-    apt-get install --yes nodejs
+RUN apt-get update
+RUN apt-get -y install sudo
+RUN apt-get -y install curl
+RUN apt-get -y install git
+RUN apt-get -y install wget
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash
+RUN apt-get install --yes nodejs
+    
 
 # Install PM2
 RUN npm install -g yarn
