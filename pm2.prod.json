@@ -5,23 +5,10 @@
     "out_file"    : "/tmp/servers.log",
     "name"        : "server",
     "script"      : "./build/server.js",
-    "exec_mod": "cluster",
-    "instances"  : "max",
     "log_date_format" : "MM/DD/YYYY HH:mm:ss",
     "kill_timeout" : 3000,
     "env": {
       "production": true,
     }
   }],
-  "deploy" : {
-    "production" : {
-      "user" : "broken",
-      "host" : "94.130.77.216",
-      "port": "2200",
-      "repo" : "https://github.com/aos2006/tesDeploy.git",
-      "ref"  : "origin/master",
-      "path" : "/home/broken/deworkacy/site",
-      "post-deploy": "ls -la"
-    }
-  }
 }
