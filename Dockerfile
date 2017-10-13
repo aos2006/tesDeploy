@@ -16,6 +16,7 @@ RUN apt-get update && \
 # Install PM2
 RUN npm install -g yarn
 RUN npm install -g pm2
+RUN npm install -g source-map-support
 RUN mkdir -p /var/www/dwy
 
 # Define working directory
@@ -29,4 +30,4 @@ COPY docker-entrypoint.sh /
 # Expose port
 EXPOSE 3000
 # Run app
-CMD pm2-docker start ./build/server.js
+CMD pm2 start --no-daemon ./build/server.js
