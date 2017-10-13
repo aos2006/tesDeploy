@@ -16,5 +16,5 @@ dwy:
   volumes:
     - /tmp:/tmp
   environment:
-    - MODE=dev
+    - MODE=prod
     - CLOUDWATCH_REGION=us-west-2
