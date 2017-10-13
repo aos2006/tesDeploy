@@ -1,24 +1,30 @@
-FROM keymetrics/pm2:latest
+# Set the base image to Ubuntu
+FROM ubuntu:14.04
 
-# Set a working directory
-WORKDIR /usr/src/app
-COPY ./src ./src
-COPY ./tools ./tools
-COPY ./public ./public
-RUN npm run build
-COPY ./build/package.json .
-COPY ./build/yarn.lock .
-COPY ./pm2.prod.json .
-RUN ls -al -R
-# Install Node.js dependencies
-ENV NPM_CONFIG_LOGLEVEL warn
-RUN yarn add global pm2
-# RUN npm uninstall pm2-auto-pull
-# RUN yarn add pm2-auto-pull
-RUN yarn install --production --no-progress
-# RUN pm2 set pm2-auto-pull:interval 60000
-EXPOSE 3000
-# Copy application files
-COPY ./build .
 
-CMD ["pm2-docker", "pm2.prod.json"];
+# Install Node.js and other dependencies
+RUN apt-get update && \
+    apt-get -y install curl && \
+    apt-get -y install git && \
+    apt-get -y install wget && \
+    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
+    apt-get install --yes nodejs
+
+# Install PM2
+RUN npm install -g pm2
+
+RUN mkdir -p /var/www/app
+
+# Define working directory
+WORKDIR /var/www/app
+
+ADD . /var/www/app
+
+RUN npm install
+
+
+# Expose port
+EXPOSE 5000
+
+# Run app
+CMD pm2 start --no-daemon  processes.json
