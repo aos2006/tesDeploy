@@ -22,7 +22,7 @@ WORKDIR /var/www/dwy
 
 ADD . /var/www/dwy
 RUN ls -la
-RUN yarn install 
+RUN npm install 
 
 # Expose port
 EXPOSE 3000
