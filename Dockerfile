@@ -16,7 +16,6 @@ RUN apt-get update && \
 # Install PM2
 RUN npm install -g yarn
 RUN npm install -g pm2
-RUN npm install -g source-map-support
 RUN mkdir -p /var/www/dwy
 
 # Define working directory
@@ -24,7 +23,7 @@ WORKDIR /var/www/dwy
 
 ADD . /var/www/dwy
 RUN ls -la
-# RUN yarn install --production --no-progress 
+RUN yarn install --production --no-progress 
 COPY docker-entrypoint.sh /
 # ENTRYPOINT ["/docker-entrypoint.sh"]
 # Expose port
