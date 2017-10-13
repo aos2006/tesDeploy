@@ -15,8 +15,6 @@ lb:
     - dwy
   ports:
     - '80:3000'
-  roles:
-    - global
 dwy:
   build: .
   ports:
