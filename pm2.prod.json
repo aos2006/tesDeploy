@@ -5,6 +5,7 @@
     "name"        : "server",
     "script"      : "build/server.js",
     "out_file"    : "/tmp/servers.log",
+    "exec_mode": "cluster",
     "log_date_format" : "MM/DD/YYYY HH:mm:ss"
   }],
 }
