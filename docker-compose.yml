@@ -18,3 +18,4 @@ dwy:
   environment:
     - MODE=dev
     - CLOUDWATCH_REGION=us-west-2
+    
