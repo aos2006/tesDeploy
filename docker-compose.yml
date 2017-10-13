@@ -8,10 +8,10 @@ nginx:
     - /etc/nginx/psw:/etc/nginx/psw
     - /etc/nginx/ssl:/etc/nginx/ssl
   environment:
-    - DOMAIN_NAME=brokenhand.ga
+    - DOMAIN_NAME=brokenhand
 dwy:
   build: .
-  expose:
+  ports:
     - "3000"
   volumes:
     - /tmp:/tmp
