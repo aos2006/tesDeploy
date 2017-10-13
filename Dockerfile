@@ -2,7 +2,6 @@ FROM keymetrics/pm2:latest
 
 # Set a working directory
 WORKDIR /usr/src/app
-RUN npm run build
 COPY ./build/package.json .
 COPY ./build/yarn.lock .
 COPY ./pm2.prod.json .

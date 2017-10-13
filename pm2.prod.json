@@ -12,5 +12,15 @@
     "env": {
       "production": true,
     }
-  }]
+  }],
+  "deploy" : {
+    "production" : {
+      "user" : "broken",
+      "host" : "94.130.77.216",
+      "port": "2200",
+      "repo" : "https://github.com/aos2006/tesDeploy.git",
+      "ref"  : "feature/depl",
+      "path" : "/home/broken/deworkacy/site",
+    }
+  }
 }

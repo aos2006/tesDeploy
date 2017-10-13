@@ -1,2 +1,4 @@
+npm run build
 docker build -t deworkacy-site .
-docker run -p 3000:3000 deworkacy-site
+docker tag deworkacy-site aos2006/deworkacy-site
+docker push aos2006/deworkacy-site
