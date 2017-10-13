@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get -y install git && \
     apt-get -y install wget && \
     curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
-    apt-get install --yes nodejs
+    apt-get install --yes nodejs@latest
 
 # Install PM2
 RUN npm install -g yarn
