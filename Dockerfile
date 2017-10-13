@@ -15,7 +15,7 @@ RUN apt-get update && \
 
 # Install PM2
 RUN npm install -g yarn
-RUN npm install -g pm2
+RUN yarn add -g pm2
 
 RUN mkdir -p /var/www/dwy
 
