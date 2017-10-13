@@ -27,4 +27,4 @@ RUN npm install
 EXPOSE 5000
 
 # Run app
-CMD pm2 start --no-daemon  processes.json
+CMD pm2 start --no-daemon  pm2.dev.json
