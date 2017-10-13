@@ -20,7 +20,7 @@
       "ssh_options": "StrictHostKeyChecking=no",
       "post-setup": "ls -la",
       "pre-deploy-local" : "echo 'Deploy start'",
-      "post-deploy" : "docker exec -it dwy npm run build",
+      "post-deploy" : "docker exec -it source_dwy_1 npm run build",
       "env"  : {
         "NODE_ENV": "production"
       }
