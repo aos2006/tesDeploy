@@ -29,4 +29,4 @@ COPY docker-entrypoint.sh /
 # Expose port
 EXPOSE 3000
 # Run app
-CMD pm2 start ./build/server.js
+CMD pm2-docker start ./build/server.js
