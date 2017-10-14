@@ -31,4 +31,4 @@ RUN yarn build
 EXPOSE 3000
 
 # Run app
-CMD pm2 start --no-daemon  pm2.prod.json
+CMD pm2 start --no-daemon  pm2.prod.json --disable-source-map
