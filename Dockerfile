@@ -28,7 +28,7 @@ RUN yarn install
 RUN yarn build 
 
 # Expose port
-EXPOSE 5000
+EXPOSE 3000
 
 # Run app
 CMD pm2 start --no-daemon  pm2.prod.json
