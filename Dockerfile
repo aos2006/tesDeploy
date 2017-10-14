@@ -25,6 +25,7 @@ WORKDIR /var/www/dwy
 ADD . /var/www/dwy
 
 RUN yarn install 
+RUN yarn build 
 
 # Expose port
 EXPOSE 5000

@@ -3,7 +3,8 @@
   "apps" : [{
     "name"        : "server",
     "script"      : "build/server.js",
-    "source_map_support": false,
+    "source_map_support": true,
+    "instances": "2",
     "log_date_format" : "MM/DD/YYYY HH:mm:ss",
     "env": {
       "production": true,
@@ -16,11 +17,11 @@
       "ref"  : "origin/master",
       "port": "2200",
       "repo" : "https://github.com/aos2006/tesDeploy.git",
-      "path" : "/home/broken/deworkacky/site",
+      "path" : "/home/broken/dwy/site",
       "ssh_options": "StrictHostKeyChecking=no",
-      "post-setup": "ls -la",
+      "post-setup": "docker-compose up -d --build",
       "pre-deploy-local" : "echo 'Deploy start'",
-      "post-deploy" : "docker exec source_dwy_1 yarn build",
+      "post-deploy" : "docker exec source_dwy_1 yarn build && docker exec source_dwy_1 pm2 reload all",
       "env"  : {
         "NODE_ENV": "production"
       }
