@@ -23,6 +23,7 @@ RUN mkdir -p /var/www/dwy
 WORKDIR /var/www/dwy
 
 ADD . /var/www/dwy
+RUN npm install --save-dev source-map-support
 RUN yarn install
 RUN yarn build 
 
