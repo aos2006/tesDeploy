@@ -23,8 +23,7 @@ RUN mkdir -p /var/www/dwy
 WORKDIR /var/www/dwy
 
 ADD . /var/www/dwy
-RUN yarn add source-map-support
-RUN yarn install
+RUN yarn install --production --no-progress
 RUN yarn build 
 
 # Expose port
