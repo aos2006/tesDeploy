@@ -4,6 +4,9 @@ services:
     build: .
     ports:
       - "3000:3000"
+      - "3001:3000"
+      - "3002:3000"
+      - "3003:3000"
     volumes:
       - /tmp:/tmp
     environment:
