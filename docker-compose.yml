@@ -3,7 +3,7 @@ services:
   dwy:
     build: .
     ports:
-      - "3000-3004"
+      - "80:3000-3004"
     volumes:
       - /tmp:/tmp
     environment:
