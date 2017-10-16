@@ -3,7 +3,7 @@ services:
   dwy:
     build: .  
     expose:
-      - "3000"
+      - "3001"
     volumes:
       - /tmp:/tmp
     environment:
