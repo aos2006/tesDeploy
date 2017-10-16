@@ -4,6 +4,8 @@
     "name"        : "server",
     "script"      : "./build/server.js",
     "log_date_format" : "MM/DD/YYYY HH:mm:ss",
+    "instances": "max",
+    "exec_mode": "cluster",
     "env": {
       "production": true,
     }
@@ -17,9 +19,9 @@
       "repo" : "https://github.com/aos2006/tesDeploy.git",
       "path" : "/home/broken/dwy/site",
       "ssh_options": "StrictHostKeyChecking=no",
-      "post-setup": "docker-compose up -d --build",
+      "post-setup": "docker-compose up --build -d",
       "pre-deploy-local" : "echo 'Deploy start'",
-      "post-deploy" : "docker exec source_dwy_1 yarn build && docker exec source_dwy_1 pm2 reload all",
+      "post-deploy" : "docker exec source_dwy_1 yarn run build && docker exec source_dwy_1 pm2 reload all",
       "env"  : {
         "NODE_ENV": "production"
       }
