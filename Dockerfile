@@ -22,7 +22,7 @@ RUN mkdir -p /var/www/dwy && cp -a /tmp/node_modules /var/www/dwy
 # Wokr dir
 WORKDIR /var/www/dwy
 ADD . /var/www/dwy
-
+RUN npm run build 
 # Working commands
 RUN npm -v && node -v
 RUN ls -la
