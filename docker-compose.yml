@@ -1,14 +1,3 @@
-# nginx:
-#   build: ./nginx
-#   links:
-#     - dwy:dwy
-#   ports:
-#     - "80:80"
-#   volumes:
-#     - /etc/nginx/psw:/etc/nginx/psw
-#     - /etc/nginx/ssl:/etc/nginx/ssl
-#   environment:
-#     - DOMAIN_NAME=brokenhand.ga
 version: '1'
 services:
   dwy:
@@ -22,13 +11,12 @@ services:
       - CLOUDWATCH_REGION=us-west-2
   lb:
     image: dockercloud/haproxy
-    links:
-      - dwy
+    depends_on:
+      - web
+      - blog
     environment:
-      - DOCKER_TLS_VERIFY
-      - DOCKER_HOST
-      - DOCKER_CERT_PATH
+      - ADDITIONAL_SERVICES=project_dir:web,project_dir:blog
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - 80:3000
+      - 80:80
