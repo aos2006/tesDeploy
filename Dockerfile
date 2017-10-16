@@ -15,17 +15,22 @@ RUN npm install pm2@latest -g
 RUN pm2 update
 RUN npm install -g babel-cli babel-core
 RUN npm install babel-preset-env babel-preset-stage-2 babel-preset-react babel-preset-react-optimize --save-dev
-RUN mkdir -p /var/www/dwy
-WORKDIR /var/www/dwy
+# Installing deps
+ADD package.json /var/www/dwy/package.json
 
+RUN mkdir -p /var/www/dwy
+RUN cd /var/www/dwy && yarn install --production --no-progress
+RUN mkdir -p /var/www/dwy && cp -a /var/www/dwy/node_modules /var/www/dwy
+# Wokr dir
+WORKDIR /var/www/dwy
 ADD . /var/www/dwy
-RUN node ./src/server.js
+
+# Working commands
 RUN npm -v && node -v
-# RUN yarn install
-# RUN npm install source-map-support
-# RUN yarn run build
+RUN ls -la
+
 # Expose port
 EXPOSE 3000
 
 # Run app
-CMD ["node" "./build/server.js"]
+CMD node ./build/server.js
