@@ -16,7 +16,5 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - TCP_PORTS=3000
-      - MODE=tcp
     ports:
       - 80:80
