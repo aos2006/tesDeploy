@@ -12,8 +12,7 @@ services:
   lb:
     image: dockercloud/haproxy
     depends_on:
-      - web
-      - blog
+      - dwy
     environment:
       - ADDITIONAL_SERVICES=project_dir:web,project_dir:blog
     volumes:
