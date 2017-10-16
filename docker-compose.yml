@@ -15,7 +15,5 @@ services:
       - dwy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - SERVICE_PORTS: '3000'
     ports:
       - 80:80
