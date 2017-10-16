@@ -15,6 +15,7 @@ services:
       - dwy
     environment:
       PORT: 8080
+       - ADDITIONAL_SERVICES=project_dir:dwy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
