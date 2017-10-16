@@ -3,7 +3,7 @@ services:
   dwy:
     build: .
     expose:
-      - "8080"
+      - "3000"
     volumes:
       - /tmp:/tmp
     environment:
@@ -14,9 +14,8 @@ services:
     depends_on:
       - dwy
     environment:
-      PORT: 8080
        - ADDITIONAL_SERVICES=project_dir:dwy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - 80:80
+      - 80:3000
