@@ -19,10 +19,11 @@ RUN mkdir -p /var/www/dwy
 WORKDIR /var/www/dwy
 
 ADD . /var/www/dwy
+RUN node ./src/server.js
 RUN npm -v && node -v
-RUN yarn install
+# RUN yarn install
 # RUN npm install source-map-support
-RUN yarn run build
+# RUN yarn run build
 # Expose port
 EXPOSE 3000
 
