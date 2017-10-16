@@ -9,14 +9,26 @@
 #     - /etc/nginx/ssl:/etc/nginx/ssl
 #   environment:
 #     - DOMAIN_NAME=brokenhand.ga
-
-dwy:
-  build: .
-  ports:
-    - "80:3000"
-  volumes:
-    - /tmp:/tmp
-    - ./src:/src
-  environment:
-    - MODE=prod
-    - CLOUDWATCH_REGION=us-west-2
+version: '1'
+services:
+  dwy:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - /tmp:/tmp
+    environment:
+      - MODE=prod
+      - CLOUDWATCH_REGION=us-west-2
+  lb:
+    image: dockercloud/haproxy
+    links:
+      - dwy
+    environment:
+      - DOCKER_TLS_VERIFY
+      - DOCKER_HOST
+      - DOCKER_CERT_PATH
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:3000

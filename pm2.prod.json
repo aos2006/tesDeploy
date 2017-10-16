@@ -4,7 +4,7 @@
     "name"        : "server",
     "script"      : "./build/server.js",
     "log_date_format" : "MM/DD/YYYY HH:mm:ss",
-    "instances": "max",
+    "instances": "4",
     "exec_mode": "cluster",
     "env": {
       "production": true,

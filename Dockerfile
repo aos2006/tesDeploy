@@ -27,4 +27,4 @@ RUN yarn run build
 EXPOSE 3000
 
 # Run app
-CMD ["pm2", "--no-daemon", "start", "pm2.prod.json"]
+CMD ["node" "./build/server.js"]
