@@ -11,8 +11,8 @@ services:
       - CLOUDWATCH_REGION=us-west-2
   lb:
     image: dockercloud/haproxy
-    depends_on:
-      - dwy
+    links:
+      - dwy:dwy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
