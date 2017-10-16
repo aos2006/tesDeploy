@@ -15,7 +15,7 @@ services:
       - dwy:dwy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    invironment:
+    environment:
       - TCP_PORTS=3000
       - MODE=tcp
     ports:
