@@ -17,6 +17,8 @@ services:
     image: dockercloud/haproxy
     depends_on:
       - dwy
+    environment:
+      - MODE=tcp
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
